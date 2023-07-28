@@ -1,0 +1,351 @@
+$persoGray: #dbe2ef;
+$persoWhite: #f9f7f7;
+$persoDark: #112d4e;
+$persoGold: rgb(219, 166, 32);
+$persoBlue: #3f72af;
+
+//Mixin
+@mixin flexCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flexRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@mixin hover {
+    color: $persoDark;
+    background: $persoGray;
+    border: 0.2rem solid rgba(0, 0, 0, 0.35);
+}
+
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap");
+
+//Import
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+//Général
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border-radius: 0.5rem;
+}
+
+html {
+    font-size: 62.5%; //1rem = 10px
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-size: 2rem;
+    font-family: "Righteous", cursive;
+    @include flex();
+    align-content: space-between;
+}
+#page {
+    height: 100vh;
+    margin: 0 auto;
+}
+#mot {
+    visibility: hidden;
+}
+.bg-gray{
+    background-color: #dbe2ef;
+}
+.pendu,
+.pendu_title,
+.mot {
+    width: 50%;
+    margin: 1rem auto;
+    background-color: $persoBlue;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 0.2rem solid rgba(0, 0, 0, 0.35);
+    border-radius: 0.5rem;
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    color: $persoGold;
+}
+.pendu {
+    height: 45vh;
+}
+.pendu_title {
+    padding: 0.5rem;
+    h1 {
+        font-size: 3rem;
+    }
+}
+.mot {
+    font-size: 2rem;
+    height: 23rem;
+    padding: 1rem;
+}
+p {
+    margin-bottom: 0 !important;
+}
+.motRechercher {
+    border: 0.2rem solid rgba(0, 0, 0, 0.35);
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    font-family: "Righteous", cursive;
+    font-weight: bold;
+}
+#motReveler {
+    color: $persoGold;
+    visibility: visible;
+    height: 3rem;
+}
+#lettreReveler {
+    height: 1rem;
+}
+.lettre {
+    visibility: visible;
+}
+.hidden {
+    visibility: hidden;
+}
+.valider {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 2rem;
+    border: 0.2rem solid rgba(255, 255, 255, 0.35);
+    background: $persoDark;
+    color: $persoGold;
+    box-shadow: rgb(219, 166, 32) 0px 0px 10px;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+    &:hover {
+        @include hover;
+        text-shadow: rgb(255, 255, 255) 2px 2px 2px;
+    }
+}
+
+.coups {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    .titreCoups {
+        position: absolute;
+        top: -2rem;
+        right: 0rem;
+    }
+    #coupsRestant {
+        font-size: 2rem;
+        width: 4rem;
+        height: 4rem;
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+        border: 0.1rem solid rgba(0, 0, 0, 0.35);
+        text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+        box-shadow: rgb(219, 166, 32) 0px 0px 10px;
+        color: $persoGold;
+        border-radius: 50rem;
+        background: $persoBlue;
+        &:hover {
+            @include hover;
+            text-shadow: rgb(255, 255, 255) 2px 2px 2px;
+        }
+    }
+}
+.bouton {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    .btn {
+        width: 10%;
+        position: absolute;
+        top: 5rem;
+        right: 5rem;
+        border: 0.1rem solid rgba(0, 0, 0, 0.35);
+        text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+        box-shadow: rgb(219, 166, 32) 0px 0px 10px;
+        color: $persoGold;
+        border-radius: 50rem;
+        background: $persoDark;
+        &:hover {
+            @include hover;
+        }
+    }
+    .logo {
+        width: 100%;
+        border-radius: 50rem;
+        display: block;
+    }
+}
+
+.virtual-keyboard {
+    width: 75%;
+}
+button.keyboard-button {
+    color: $persoGold;
+    text-shadow:
+        rgb(0, 0, 0) 1px 1px 1px,
+        rgb(255, 255, 255) 1px 1px 1px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: 0.2rem solid rgba(0, 0, 0, 0.35);
+}
+button.keyboard-button:hover {
+    color: #112d4e;
+    background: #dbe2ef;
+    border: 0.2rem solid rgba(0,0,0,.35);
+}
+@media (min-width: 1000px) and (max-width: 1300px) {
+    .pendu,
+    .pendu_title,
+    .mot {
+        width: 55%;
+    }
+    .bouton.btn {
+        width: 10%;
+    }
+}
+@media (min-width: 800px) and (max-width: 999px) {
+    .pendu,
+    .pendu_title,
+    .mot {
+        width: 65%;
+    }
+    .bouton.btn {
+        width: 10%;
+    }
+}
+@media (min-width: 600px) and (max-width: 799px) {
+    .pendu,
+    .pendu_title,
+    .mot {
+        width: 75%;
+    }
+    .bouton.btn {
+        width: 15%;
+    }
+}
+@media (min-width: 200px) and (max-width: 599px) {
+    .pendu,
+    .pendu_title,
+    .mot {
+        width: 90%;
+    }
+}
+.virtual-keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.6rem;
+    width: 90%;
+}
+
+.keyboard-button {
+    margin: 0.4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 999px) {
+    .virtual-keyboard {
+        display: none;
+    }
+    .pendu {
+        height: 40%;
+    }
+
+    .bouton {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        .btn {
+            width: 10%;
+            position: absolute;
+            top: 5rem;
+            right: 3rem;
+            border-radius: 50rem;
+            .logo {
+                border-radius: 50rem;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .virtual-keyboard {
+        display: none;
+    }
+    .bouton {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        .btn {
+            width: 15%;
+            position: absolute;
+            top: 5rem;
+            right: 0rem;
+            border-radius: 50rem;
+            .vue2 {
+                border-radius: 50rem;
+                display: block;
+                width: 100%;
+            }
+            .vue1 {
+                display: none;
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .virtual-keyboard {
+        display: none;
+    }
+    .bouton {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        .btn {
+            width: 20%;
+            position: absolute;
+            top: 5rem;
+            right: 0rem;
+            border-radius: 50rem;
+            .vue2 {
+                border-radius: 50rem;
+                display: block;
+                width: 100%;
+            }
+            .vue1 {
+                display: none;
+            }
+        }
+    }
+}
+/* Bouton flottant */
+.float-button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+/* Menu déroulant */
+.dropdown-menu {
+    min-width: auto;
+}

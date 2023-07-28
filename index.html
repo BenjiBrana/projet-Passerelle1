@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Projet Passerelle 1 - Le Pendu</title>
+	<link rel="stylesheet" href="design/css/default.css" />
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<script src="script.js"></script>
+
+<body class="bg-gray">
+	<div id="page">
+		<div class="bouton">
+			<form method="post" href="javascript:location.reload();">
+				<button type="submit" class="btn btn-lg btn-primary">
+					<img class="logo" src="assets/img/replay.png">
+				</button>
+			</form>
+		</div>
+		<div class="pendu_title">
+			<h1>Pendu tu seras ?</h1>
+		</div>
+		<div class="pendu">
+			<img class="h-100 w-100" name="pendu" src="assets/img/pendu_0.png" />
+			<br />
+		</div>
+		<form>
+			<div class="mot">
+				<p>Entrer le mot que vous voulez essayer:</p>
+				<input class="text-center my-3" type="text" id="motProposer" placeholder="...Mot à tester..." />
+				<br />
+				<button class="valider" type="button" onclick="getValue();" >
+					Valider
+				</button>
+				<div class ="coups">
+					<h3 class="titreCoups d-flex flex-column"> <span>Coups</span> <span>restant:</span></h3>
+					<p id ="coupsRestant">9</p>
+				</div>
+				<p>Mot recherché:</p>
+				<div class="container motRechercher  w-50 bg-light">
+					<div class="d-flex justify-content-center  h-25" id="mot">
+						<div id="lettreReveler" class="d-flex ">
+							<script>
+								for (var i = 0; i < tailleMot; i++) document.write(" <p id=\"" + i + "\">" + motSecret.charAt(i) + "</p>");
+								</script>
+						</div>
+						<p id="motReveler"></p>
+					</div>
+				</div>
+		</form>
+	</div>
+	<div class="row virtual-keyboard mx-auto" id="clavier">
+		<button class="keyboard-button btn btn-light col-1 " onclick="proposer(this);">A</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">B</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">C</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">D</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">E</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">F</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">G</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">H</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">I</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">J</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">K</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">L</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">M</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">N</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">O</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">P</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">Q</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">R</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">S</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">T</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">U</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">V</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">W</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">X</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">Y</button>
+		<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">Z</button>
+	</div>
+</body>
+
+</html>
