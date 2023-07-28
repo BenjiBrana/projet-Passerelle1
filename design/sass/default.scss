@@ -189,9 +189,6 @@ p {
     }
 }
 
-.virtual-keyboard {
-    width: 75%;
-}
 button.keyboard-button {
     color: $persoGold;
     text-shadow:
@@ -205,6 +202,20 @@ button.keyboard-button:hover {
     color: #112d4e;
     background: #dbe2ef;
     border: 0.2rem solid rgba(0,0,0,.35);
+}
+.virtual-keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.6rem;
+    width: 90%;
+}
+
+.keyboard-button {
+    margin: 0.4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 @media (min-width: 1000px) and (max-width: 1300px) {
     .pendu,
@@ -237,27 +248,33 @@ button.keyboard-button:hover {
     }
 }
 @media (min-width: 200px) and (max-width: 599px) {
+    #page{
+        height: 80vh;
+    }
     .pendu,
     .pendu_title,
     .mot {
         width: 90%;
     }
 }
-.virtual-keyboard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem;
-    padding: 1.6rem;
-    width: 90%;
+@media all and (max-width: 499px) {
+    #page{
+        height: 75vh;
+    }   
+    .mot{
+        height: 25rem;
+    }
+    .virtual-keyboard {
+        gap: 1rem;
+        padding: 1.4rem;
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    .keyboard-button {
+        margin: 0.2rem;
+    }
 }
-
-.keyboard-button {
-    margin: 0.4rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
 @media screen and (max-width: 999px) {
     .virtual-keyboard {
         display: none;
@@ -265,7 +282,6 @@ button.keyboard-button:hover {
     .pendu {
         height: 40%;
     }
-
     .bouton {
         width: 100%;
         position: relative;
@@ -334,16 +350,4 @@ button.keyboard-button:hover {
             }
         }
     }
-}
-/* Bouton flottant */
-.float-button {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10;
-}
-
-/* Menu déroulant */
-.dropdown-menu {
-    min-width: auto;
 }
