@@ -18,40 +18,46 @@
 		<div class="pendu_title">
 			<h1>Pendu tu seras ?</h1>
 		</div>
-		<div class="pendu">
-			<img class="h-100 w-100" name="pendu" src="assets/img/pendu_0.png" />
+		<div class="pendu my-1">
+			<img class="imgTv" name="pendu" src="assets/img/pendu_0.png" />
 			<br />
 		</div>
-		<form>
-			<div class="mot">
+		<form class="mot py-0 my-0">
+			<div class="d-flex flex-column mx-auto motRechercher pt-5">
 				<p>Entrer le mot que vous voulez essayer:</p>
-				<input class="text-center my-3" type="text" id="motProposer" placeholder="...Mot à tester..." />
-				<br />
-				<button class="valider" type="button" onclick="getValue();" >
-					Valider
-				</button>
-				<div class="bouton">
-					<form method="post" href="javascript:location.reload();">
-						<button type="submit" class="btn btn-primary">
-							<img class="logo" src="assets/img/replay.png">
-						</button>
-					</form>
+				<div class="d-flex flex-row w-100 my-5 justify-content-center gap-5">
+					<input class="text-center w-50 my-3" type="text" id="motProposer" placeholder="...Mot à tester..." />
+					<br />
+					<button class="valider" type="button" onclick="getValue();">
+						Valider
+					</button>
 				</div>
-				<div class ="coups">
-					<h3 class="titreCoups d-flex flex-column"> <span>Coups</span> <span>restant:</span></h3>
-					<p id ="coupsRestant">9</p>
-				</div>
-				<p>Mot recherché:</p>
-				<div class="container motRechercher  w-50 bg-light">
-					<div class="d-flex justify-content-center  h-25" id="mot">
-						<div id="lettreReveler" class="d-flex ">
-							<script>
-								for (var i = 0; i < tailleMot; i++) document.write(" <p id=\"" + i + "\">" + motSecret.charAt(i) + "</p>");
-								</script>
-						</div>
-						<p id="motReveler"></p>
+				<div class="d-flex ">
+					<div class="bouton py-2">
+						<form method="post" href="javascript:location.reload();">
+							<button type="submit" class="btn btn-primary">
+								<img class="logo" src="assets/img/replay.png">
+							</button>
+						</form>
 					</div>
+					<div class="rechercher flex-column justify-content-between py-2">
+						<p>Mot recherché:</p>
+						<div class="d-flex justify-content-center pt-3 h-50" id="mot">
+							<div id="lettreReveler" class="d-flex h-100">
+								<script>
+									for (var i = 0; i < tailleMot; i++) document.write(" <p id=\"" + i + "\">" + motSecret.charAt(i) + "</p>");
+								</script>
+							</div>
+							<p id="motReveler"></p>
+						</div>
+					</div>
+					<div class="d-flex flex-column justify-content-center coups py-2">
+						<h3 class="titreCoups d-flex flex-column"> <span>Coups</span> <span>restant:</span></h3>
+						<p class="mx-auto text-center" id="coupsRestant">9</p>
+					</div>
+					
 				</div>
+			</div>
 		</form>
 	</div>
 	<div class="row virtual-keyboard mx-auto" id="clavier">

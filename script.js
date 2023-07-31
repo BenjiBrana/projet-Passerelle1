@@ -43,10 +43,10 @@ function changeCouleur(element, couleur) {
 // Gère tous les traitements à faire lorsqu'on appuie sur une touche
 function proposer(element) {
   
-  // Si la couleur de fond est lightgreen, c'est qu'on a déjà essayé - on quitte la fonction
+  // Si la couleur de fond est Black, c'est qu'on a déjà essayé - on quitte la fonction
   if (element.style.backgroundColor == "black" || fini) return;
 
-  // On récupère la lettre du clavier et on met la touche en lightgreen (pour signaler qu'elle est cliquée)
+  // On récupère la lettre du clavier et on met la touche en black (pour signaler qu'elle est cliquée)
   var lettre = element.innerHTML;
   changeCouleur(element, "black");
 

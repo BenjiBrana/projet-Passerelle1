@@ -1,4 +1,5 @@
-$persoGray: #dbe2ef;
+$persoGrayT: #232323b9;
+$persoGray: #232323;
 $persoWhite: #f9f7f7;
 $persoDark: #112d4e;
 $persoGold: rgb(219, 166, 32);
@@ -29,7 +30,7 @@ $persoBlue: #3f72af;
 }
 @mixin hover {
     color: $persoDark;
-    background: $persoGray;
+    background: $persoWhite;
     border: 0.2rem solid rgba(0, 0, 0, 0.35);
 }
 
@@ -59,36 +60,50 @@ body {
     align-content: space-between;
 }
 #page {
+    width: 55%;
     height: 100vh;
     margin: 0 auto;
 }
 #mot {
     visibility: hidden;
+    background:$persoWhite;
 }
 .bg-gray {
-    background-color: #dbe2ef;
+    background-color: $persoGrayT;
 }
 .pendu,
 .pendu_title,
 .mot {
-    width: 50%;
+    width: 100%;
     margin: 1rem auto;
-    background-color: $persoGray;
     padding: 2rem;
     border-radius: 0.5rem;
     text-align: center;
-    border: 0.2rem solid rgba(0, 0, 0, 0.35);
-    border-radius: 0.5rem;
     text-shadow: rgb(0, 0, 0) 1px 1px 1px;
     color: $persoGold;
 }
 .pendu {
-    height: 45vh;
+    height: 50%;
+    width: 80%;
+    background: #000 url(../../assets/img/tv.png) no-repeat;
+    background-size: 100% 100%;
+    border: 0.2rem inset rgba(0, 0, 0, 0.5);
+    border-radius: 1.5rem;
+    position: relative;
+    .imgTv {
+        position: absolute;
+        margin-left: 1rem;
+        left: 0;
+        top: 1.8rem;
+        width: 77%;
+        height: 90%;
+        border: 0.2rem inset rgba(255, 255, 255, 0.5);
+    }
 }
 .pendu_title {
     padding: 0.5rem;
     h1 {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 }
 .mot {
@@ -100,7 +115,6 @@ p {
     margin-bottom: 0 !important;
 }
 .motRechercher {
-    border: 0.2rem solid rgba(0, 0, 0, 0.35);
     text-shadow: rgb(0, 0, 0) 1px 1px 1px;
     font-family: "Righteous", cursive;
     font-weight: bold;
@@ -112,9 +126,11 @@ p {
 }
 #lettreReveler {
     height: 1rem;
+    
 }
 .lettre {
     visibility: visible;
+    font-size: 3rem;
 }
 .hidden {
     visibility: hidden;
@@ -135,28 +151,23 @@ p {
     }
 }
 
+.rechercher {
+    flex: 2;
+}
 .coups {
-    width: 100%;
-    position: relative;
+    flex: 1;
     margin: 0 auto;
-    .titreCoups {
-        position: absolute;
-        top: -2rem;
-        right: 0rem;
-    }
+
     #coupsRestant {
         font-size: 2rem;
         width: 4rem;
         height: 4rem;
-        position: absolute;
-        top: 3rem;
-        right: 1rem;
         border: 0.1rem solid rgba(0, 0, 0, 0.35);
         text-shadow: rgb(0, 0, 0) 1px 1px 1px;
         box-shadow: rgb(219, 166, 32) 0px 0px 10px;
         color: $persoGold;
         border-radius: 50rem;
-        background: $persoBlue;
+        background: $persoDark;
         &:hover {
             @include hover;
             text-shadow: rgb(255, 255, 255) 2px 2px 2px;
@@ -164,17 +175,13 @@ p {
     }
 }
 .bouton {
-    width: 100%;
-    position: relative;
+    flex: 1;
     margin: 0 auto;
 
     .btn {
         padding: 1px;
         padding-bottom: 2px;
-        width: 10%;
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
+        width: 40%;
         border: 0.1rem solid rgba(0, 0, 0, 0.35);
         text-shadow: rgb(0, 0, 0) 1px 1px 1px;
         box-shadow: rgb(219, 166, 32) 0px 0px 10px;
@@ -192,20 +199,6 @@ p {
     }
 }
 
-button.keyboard-button {
-    color: $persoGold;
-    text-shadow:
-        rgb(0, 0, 0) 1px 1px 1px,
-        rgb(255, 255, 255) 1px 1px 1px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    border: 0.2rem solid rgba(0, 0, 0, 0.35);
-}
-button.keyboard-button:hover {
-    color: #112d4e;
-    background: #dbe2ef;
-    border: 0.2rem solid rgba(0, 0, 0, 0.35);
-}
 .virtual-keyboard {
     display: flex;
     flex-wrap: wrap;
@@ -214,51 +207,75 @@ button.keyboard-button:hover {
     padding: 1.6rem;
     width: 90%;
 }
-
 .keyboard-button {
     margin: 0.4rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
 }
+button.keyboard-button {
+    background:$persoGrayT;
+    color: $persoGold;
+    text-shadow:
+        rgb(0, 0, 0) 1px 1px 1px,
+        rgb(255, 255, 255) 1px 1px 1px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: 0.2rem solid rgba(0, 0, 0, 0.35);
+    &:hover {
+        @include hover;
+        box-shadow: rgb(219, 166, 32) 0px 0px 10px;
+    }   
+}
+
+
+
 @media (min-width: 1000px) and (max-width: 1300px) {
-    .pendu,
-    .pendu_title,
-    .mot {
-        width: 55%;
-    }
-    .bouton.btn {
-        width: 15%;
-    }
-}
-@media (min-width: 800px) and (max-width: 999px) {
-    .pendu,
-    .pendu_title,
-    .mot {
-        width: 65%;
-    }
-}
-@media (min-width: 600px) and (max-width: 799px) {
-    .pendu,
-    .pendu_title,
-    .mot {
-        width: 75%;
-    }
-}
-@media (min-width: 200px) and (max-width: 599px) {
-    #page {
-        height: 80vh;
-    }
     .pendu,
     .pendu_title,
     .mot {
         width: 90%;
     }
+    .bouton.btn {
+        width: 15%;
+    }
+}
+@media screen and (max-width: 999px) {
+    .virtual-keyboard {
+        display: none;
+    }
+    #page {
+        width: 80%;
+        height: 75vh;
+    }
+    .pendu,
+    .pendu_title,
+    .mot {
+        width: 100%;
+    }
+    .pendu {
+        height: 40%;
+        width: 80%;
+        .imgTv{
+            top: 1.2rem;
+        }
+    }
+    .bouton {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        .btn {
+            width: 50%;
+            border-radius: 50rem;
+            .logo {
+                border-radius: 50rem;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    
 }
 @media all and (max-width: 499px) {
-    #page {
-        height: 50%;
-        font-size: 1rem;
-    }
     .mot {
         height: 25rem;
     }
@@ -270,30 +287,11 @@ button.keyboard-button:hover {
     .keyboard-button {
         margin: 0.2rem;
     }
-    
 }
-@media screen and (max-width: 999px) {
-    .virtual-keyboard {
-        display: none;
-    }
-    .pendu {
-        height: 40%;
-    }
-    .bouton {
+@media (min-width: 200px) and (max-width: 599px) {
+    #page {
+        font-size: 1rem;
+        height: 70vh;
         width: 100%;
-        position: relative;
-        margin: 0 auto;
-        .btn {
-            width: 12%;
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            border-radius: 50rem;
-            .logo {
-                border-radius: 50rem;
-                display: block;
-                width: 100%;
-            }
-        }
     }
 }
