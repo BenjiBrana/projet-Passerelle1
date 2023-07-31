@@ -256,7 +256,8 @@ button.keyboard-button:hover {
 }
 @media all and (max-width: 499px) {
     #page {
-        height: 75vh;
+        height: 50%;
+        font-size: 1rem;
     }
     .mot {
         height: 25rem;
@@ -265,7 +266,6 @@ button.keyboard-button:hover {
         gap: 1rem;
         padding: 1.4rem;
         width: 100%;
-        font-size: 1rem;
     }
     .keyboard-button {
         margin: 0.2rem;
