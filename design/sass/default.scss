@@ -65,7 +65,7 @@ body {
 #mot {
     visibility: hidden;
 }
-.bg-gray{
+.bg-gray {
     background-color: #dbe2ef;
 }
 .pendu,
@@ -73,7 +73,7 @@ body {
 .mot {
     width: 50%;
     margin: 1rem auto;
-    background-color: $persoBlue;
+    background-color: $persoGray;
     padding: 2rem;
     border-radius: 0.5rem;
     text-align: center;
@@ -167,11 +167,14 @@ p {
     width: 100%;
     position: relative;
     margin: 0 auto;
+
     .btn {
+        padding: 1px;
+        padding-bottom: 2px;
         width: 10%;
         position: absolute;
-        top: 5rem;
-        right: 5rem;
+        top: 1rem;
+        left: 1rem;
         border: 0.1rem solid rgba(0, 0, 0, 0.35);
         text-shadow: rgb(0, 0, 0) 1px 1px 1px;
         box-shadow: rgb(219, 166, 32) 0px 0px 10px;
@@ -201,7 +204,7 @@ button.keyboard-button {
 button.keyboard-button:hover {
     color: #112d4e;
     background: #dbe2ef;
-    border: 0.2rem solid rgba(0,0,0,.35);
+    border: 0.2rem solid rgba(0, 0, 0, 0.35);
 }
 .virtual-keyboard {
     display: flex;
@@ -224,7 +227,7 @@ button.keyboard-button:hover {
         width: 55%;
     }
     .bouton.btn {
-        width: 10%;
+        width: 15%;
     }
 }
 @media (min-width: 800px) and (max-width: 999px) {
@@ -233,9 +236,6 @@ button.keyboard-button:hover {
     .mot {
         width: 65%;
     }
-    .bouton.btn {
-        width: 10%;
-    }
 }
 @media (min-width: 600px) and (max-width: 799px) {
     .pendu,
@@ -243,12 +243,9 @@ button.keyboard-button:hover {
     .mot {
         width: 75%;
     }
-    .bouton.btn {
-        width: 15%;
-    }
 }
 @media (min-width: 200px) and (max-width: 599px) {
-    #page{
+    #page {
         height: 80vh;
     }
     .pendu,
@@ -258,10 +255,10 @@ button.keyboard-button:hover {
     }
 }
 @media all and (max-width: 499px) {
-    #page{
+    #page {
         height: 75vh;
-    }   
-    .mot{
+    }
+    .mot {
         height: 25rem;
     }
     .virtual-keyboard {
@@ -270,10 +267,10 @@ button.keyboard-button:hover {
         width: 100%;
         font-size: 1rem;
     }
-    
     .keyboard-button {
         margin: 0.2rem;
     }
+    
 }
 @media screen and (max-width: 999px) {
     .virtual-keyboard {
@@ -287,66 +284,15 @@ button.keyboard-button:hover {
         position: relative;
         margin: 0 auto;
         .btn {
-            width: 10%;
+            width: 12%;
             position: absolute;
-            top: 5rem;
-            right: 3rem;
+            top: 1rem;
+            left: 1rem;
             border-radius: 50rem;
             .logo {
                 border-radius: 50rem;
                 display: block;
                 width: 100%;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .virtual-keyboard {
-        display: none;
-    }
-    .bouton {
-        width: 100%;
-        position: relative;
-        margin: 0 auto;
-        .btn {
-            width: 15%;
-            position: absolute;
-            top: 5rem;
-            right: 0rem;
-            border-radius: 50rem;
-            .vue2 {
-                border-radius: 50rem;
-                display: block;
-                width: 100%;
-            }
-            .vue1 {
-                display: none;
-            }
-        }
-    }
-}
-@media screen and (max-width: 600px) {
-    .virtual-keyboard {
-        display: none;
-    }
-    .bouton {
-        width: 100%;
-        position: relative;
-        margin: 0 auto;
-        .btn {
-            width: 20%;
-            position: absolute;
-            top: 5rem;
-            right: 0rem;
-            border-radius: 50rem;
-            .vue2 {
-                border-radius: 50rem;
-                display: block;
-                width: 100%;
-            }
-            .vue1 {
-                display: none;
             }
         }
     }
