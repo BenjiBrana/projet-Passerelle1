@@ -36,9 +36,12 @@ motSecret = mots[now.getSeconds() % mots.length];
 tailleMot = motSecret.length;
 
 // Permet de changer la couleur des touches du clavier
-function changeCouleur(element, couleur) {
+function changeBackground(element, couleur) {
   element.style.backgroundColor = couleur;
-}
+ }
+function changeCouleur(element, couleur) {
+  element.style.color = couleur;
+ }
 
 // Gère tous les traitements à faire lorsqu'on appuie sur une touche
 function proposer(element) {
@@ -49,6 +52,7 @@ function proposer(element) {
   // On récupère la lettre du clavier et on met la touche en black (pour signaler qu'elle est cliquée)
   var lettre = element.innerHTML;
   changeCouleur(element, "black");
+  changeBackground(element, "black");
 
   // On met la variable trouve à false;
   var trouve = false;
@@ -106,6 +110,10 @@ function getValue() {
     for (var i = 0; i < tailleMot; i++)
       tableauMot[i].style.visibility = "visible";
     fini = true;
+   if(coupsTotals < 0 ){
+    coupsTotals === 0;
+    fini = true;
+   }
     // on affiche le mot, on fini le jeu
   }
 
