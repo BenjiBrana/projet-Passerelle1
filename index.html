@@ -27,8 +27,8 @@
 			</div>
 			<form class="mot py-0 my-0">
 				<div class="d-flex flex-column mx-auto motRechercher pt-5">
-					<p>Entrer le mot que vous voulez essayer:</p>
-					<div class="d-flex flex-row w-100 my-5 justify-content-center gap-5">
+					<p class="siGagner">Entrer le mot que vous voulez essayer:</p>
+					<div class="d-flex flex-row w-100 my-5 justify-content-center gap-5 cacher">
 						<input class="text-center w-50 my-3" type="text" id="motProposer"
 							placeholder="...Mot à tester..." />
 						<br />
@@ -52,6 +52,13 @@
 							<h3 class="titreCoups d-flex flex-column"> <span>Coups</span> <span>restant:</span></h3>
 							<p class="mx-auto text-center" id="coupsRestant">9</p>
 						</div>
+					</div>
+					<div id="divReplay" class="d-none flex-column justify-content-center py-2">
+						<form method="post" href="javascript:location.reload();">
+							<button type="submit" class="btn d-block mx-auto">
+								<img class="logo mx-auto" src="assets/img/replay.png">
+							</button>
+						</form>
 					</div>
 				</div>
 			</form>

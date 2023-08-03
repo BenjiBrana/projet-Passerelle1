@@ -7,6 +7,7 @@ var coupsManques = 0; // Le nombre de lettres fausses essayées
 var coupsTotals = 9; // Le nombre de coups possible
 var lettresTrouvees = 0; // Le nombre de lettres trouvées
 var fini = false; // true si le jeu est terminé
+
 mots[0] = "MANGA";
 mots[1] = "DEVELOPPEUR";
 mots[2] = "INFORMATIQUE";
@@ -82,8 +83,7 @@ function proposer(element) {
       var message = document.getElementById("message");
       message.classList.remove("hidden");
       message.classList.add("visible");
-      message.innerHTML =
-        '<img class="d-block mx-auto" src="assets/img/perdu.png" alt="Perdu"><p class="alertMessage my-5"><b>Vous avez perdu !</b></p><form method="post" href="javascript:location.reload();"><button type="submit" class="btnReplay btn-primary d-block mx-auto"><img class="logo" src="assets/img/replay.png"></button></form>';
+      message.innerHTML ='<img class="d-block mx-auto" src="assets/img/perdu.png" alt="Perdu"><p class="alertMessage"><b>Vous avez perdu !</b></p><form method="post" href="javascript:location.reload();"><button type="submit" class="btnReplay btn-primary d-block mx-auto"><img class="logo" src="assets/img/replay.png"></button></form>';
       for (var i = 0; i < tailleMot; i++)
         tableauMot[i].style.visibility = "visible";
       fini = true;
@@ -91,17 +91,30 @@ function proposer(element) {
     }
   }
   if (lettresTrouvees == tailleMot) {
-    alert("Bravo ! Vous avez découvert le mot secret !");
     document.images["pendu"].src = "assets/img/gagner.png"; // On change l'image du pendu
+    var cacherP = document.querySelector(".siGagner");
+    var cacherDiv = document.querySelector(".cacher");
+    var visibleBtn = document.querySelector("#divReplay");
+    var gold = document.querySelector("body");
+    cacherP.classList.add("d-none");
+    gold.classList.add("gold");
+    cacherDiv.classList.add("d-none");
+    cacherDiv.classList.remove("d-flex");
+    visibleBtn.classList.add("d-flex");
+    visibleBtn.classList.remove("d-none");
     fini = true;
   }
 }
 
 function getValue() {
   // Sélectionner l'élément input et récupérer sa valeur
-  var input = document.getElementById("motProposer").value;
-  var motRechercher = document.getElementById("motReveler");
+  var input = document.querySelector("#motProposer").value;
+  var gold = document.querySelector("body");
+  var motRechercher = document.querySelector("#motReveler");
   var lettresReveler = document.querySelector("#lettreReveler");
+  var cacherP = document.querySelector(".siGagner");
+  var cacherDiv = document.querySelector(".cacher");
+  var visibleBtn = document.querySelector("#divReplay");
   var inputMaj = input.toUpperCase();
   if (inputMaj != motSecret) {
     coupsManques++;
@@ -113,8 +126,7 @@ function getValue() {
     var message = document.getElementById("message");
     message.classList.remove("hidden");
     message.classList.add("visible");
-    message.innerHTML =
-      '<img class="d-block mx-auto" src="assets/img/perdu.png" alt="Perdu"><p class="alertMessage my-5"><b>Vous avez perdu !</b></p><form method="post" href="javascript:location.reload();"><button type="submit" class="btnReplay btn-primary d-block mx-auto"><img class="logo" src="assets/img/replay.png"></button></form>';
+    message.innerHTML ='<img class="d-block mx-auto" src="assets/img/perdu.png" alt="Perdu"><p class="alertMessage"><b>Vous avez perdu !</b></p><form method="post" href="javascript:location.reload();"><button type="submit" class="btnReplay btn-primary d-block mx-auto"><img class="logo" src="assets/img/replay.png"></button></form>';
     for (var i = 0; i < tailleMot; i++)
       tableauMot[i].style.visibility = "visible";
     fini = true;
@@ -123,11 +135,14 @@ function getValue() {
   }
 
   if (inputMaj == motSecret) {
-    alert(
-      "Bravo ! Vous avez découvert le mot secret qui est " + motSecret + "  !"
-    );
     document.images["pendu"].src = "assets/img/gagner.png"; // On change l'image du pendu
     motRechercher.innerHTML = motSecret.substring(0, tailleMot);
+    cacherP.classList.add("d-none");
+    cacherDiv.classList.add("d-none");
+    cacherDiv.classList.remove("d-flex");
+    gold.classList.add("gold");
+    visibleBtn.classList.add("d-flex");
+    visibleBtn.classList.remove("d-none");
     lettresReveler.classList.add("d-none");
     lettresReveler.classList.remove("d-flex");
     fini = true;
