@@ -4,6 +4,7 @@ $persoWhite: #f9f7f7;
 $persoDark: #112d4e;
 $persoGold: rgb(219, 166, 32);
 $persoBlue: #3f72af;
+$persoRed: rgb(206, 0, 0);
 
 //Mixin
 @mixin flexCenter {
@@ -61,12 +62,12 @@ body {
 }
 #page {
     width: 55%;
-    height: 100vh;
+    height: 80vh;
     margin: 0 auto;
 }
 #mot {
     visibility: hidden;
-    background:$persoWhite;
+    background: $persoWhite;
 }
 .bg-gray {
     background-color: $persoGrayT;
@@ -101,6 +102,7 @@ body {
     }
 }
 .pendu_title {
+    margin-top: 5px;
     padding: 0.5rem;
     h1 {
         font-size: 4rem;
@@ -126,12 +128,77 @@ p {
     font-size: 3rem;
 }
 #lettreReveler {
-    height: 1rem;  
-    font-size: 3rem; 
+    height: 1rem;
+    font-size: 3rem;
 }
 .lettre {
     visibility: visible;
     font-size: 3rem;
+}
+#message {
+    height: 100vh;
+    width: 100vw;
+    z-index: 8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation-name: essuieglace, taille;
+    animation-duration: 3s, 3s;
+}
+@keyframes taille {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes essuieglace {
+    from {
+        margin-right: 50%;
+    }
+    to {
+        margin-right: 0%;
+    }
+}
+
+.alertMessage {
+    @include flexCenter();
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color:$persoRed;
+    animation-name: color;
+    animation-duration: 4s;
+
+    @keyframes color {
+        from {
+            color: black;
+        }
+        to {
+            color: $persoRed;
+            text-shadow: rgb(2219, 166, 32) 1px 1px 1px;
+        }
+    }
+}
+.btnReplay {
+    padding: 1px;
+    padding-bottom: 2px;
+    width: 5%;
+    border: 0.1rem solid rgba(0, 0, 0, 0.35);
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    box-shadow: rgb(206, 0, 0) 0px 0px 10px;
+    color: $persoGold;
+    border-radius: 50rem;
+    background: $persoDark;
+    &:hover {
+        @include hover;
+    }
+}
+.logo{
+    width: 100%;
+    border-radius: 50rem;
+    display: block;
 }
 .hidden {
     visibility: hidden;
@@ -175,30 +242,6 @@ p {
         }
     }
 }
-.bouton {
-    flex: 1;
-    margin: 0 auto;
-
-    .btn {
-        padding: 1px;
-        padding-bottom: 2px;
-        width: 40%;
-        border: 0.1rem solid rgba(0, 0, 0, 0.35);
-        text-shadow: rgb(0, 0, 0) 1px 1px 1px;
-        box-shadow: rgb(219, 166, 32) 0px 0px 10px;
-        color: $persoGold;
-        border-radius: 50rem;
-        background: $persoDark;
-        &:hover {
-            @include hover;
-        }
-    }
-    .logo {
-        width: 100%;
-        border-radius: 50rem;
-        display: block;
-    }
-}
 
 .virtual-keyboard {
     display: flex;
@@ -214,7 +257,7 @@ p {
     font-weight: bold;
 }
 button.keyboard-button {
-    background:$persoGrayT;
+    background: $persoGrayT;
     color: $persoGold;
     text-shadow:
         rgb(0, 0, 0) 1px 1px 1px,
@@ -225,10 +268,8 @@ button.keyboard-button {
     &:hover {
         @include hover;
         box-shadow: rgb(219, 166, 32) 0px 0px 10px;
-    }   
+    }
 }
-
-
 
 @media (min-width: 1000px) and (max-width: 1300px) {
     .pendu,
@@ -238,6 +279,9 @@ button.keyboard-button {
     }
     .bouton.btn {
         width: 15%;
+    }
+    .btnReplay{
+        width: 10%;
     }
 }
 @media screen and (max-width: 999px) {
@@ -256,7 +300,7 @@ button.keyboard-button {
     .pendu {
         height: 40%;
         width: 80%;
-        .imgTv{
+        .imgTv {
             top: 1.2rem;
         }
     }
@@ -274,7 +318,12 @@ button.keyboard-button {
             }
         }
     }
-    
+    .btnReplay{
+        width: 15%;
+    }
+    .alertMessage{
+        font-size: 4rem;
+    }
 }
 @media all and (max-width: 499px) {
     .mot {
@@ -292,7 +341,7 @@ button.keyboard-button {
 @media (min-width: 200px) and (max-width: 599px) {
     #page {
         font-size: 1rem;
-        height: 70vh;
+        height: 65vh;
         width: 100%;
     }
 }

@@ -38,14 +38,13 @@ tailleMot = motSecret.length;
 // Permet de changer la couleur des touches du clavier
 function changeBackground(element, couleur) {
   element.style.backgroundColor = couleur;
- }
+}
 function changeCouleur(element, couleur) {
   element.style.color = couleur;
- }
+}
 
 // Gère tous les traitements à faire lorsqu'on appuie sur une touche
 function proposer(element) {
-  
   // Si la couleur de fond est Black, c'est qu'on a déjà essayé - on quitte la fonction
   if (element.style.backgroundColor == "black" || fini) return;
 
@@ -80,7 +79,11 @@ function proposer(element) {
 
     // Si on a raté 9 fois :
     if (coupsManques == 9) {
-      alert("Vous avez perdu !");
+      var message = document.getElementById("message");
+      message.classList.remove("hidden");
+      message.classList.add("visible");
+      message.innerHTML =
+        '<img class="d-block mx-auto" src="assets/img/perdu.png" alt="Perdu"><p class="alertMessage my-5"><b>Vous avez perdu !</b></p><form method="post" href="javascript:location.reload();"><button type="submit" class="btnReplay btn-primary d-block mx-auto"><img class="logo" src="assets/img/replay.png"></button></form>';
       for (var i = 0; i < tailleMot; i++)
         tableauMot[i].style.visibility = "visible";
       fini = true;
@@ -89,6 +92,7 @@ function proposer(element) {
   }
   if (lettresTrouvees == tailleMot) {
     alert("Bravo ! Vous avez découvert le mot secret !");
+    document.images["pendu"].src = "assets/img/gagner.png"; // On change l'image du pendu
     fini = true;
   }
 }
@@ -106,14 +110,15 @@ function getValue() {
     document.images["pendu"].src = "assets/img/pendu_" + coupsManques + ".png"; // On change l'image du pendu
   }
   if (coupsManques == 9) {
-    alert("Vous avez perdu !");
+    var message = document.getElementById("message");
+    message.classList.remove("hidden");
+    message.classList.add("visible");
+    message.innerHTML =
+      '<img class="d-block mx-auto" src="assets/img/perdu.png" alt="Perdu"><p class="alertMessage my-5"><b>Vous avez perdu !</b></p><form method="post" href="javascript:location.reload();"><button type="submit" class="btnReplay btn-primary d-block mx-auto"><img class="logo" src="assets/img/replay.png"></button></form>';
     for (var i = 0; i < tailleMot; i++)
       tableauMot[i].style.visibility = "visible";
     fini = true;
-   if(coupsTotals < 0 ){
-    coupsTotals === 0;
-    fini = true;
-   }
+   
     // on affiche le mot, on fini le jeu
   }
 
@@ -121,9 +126,10 @@ function getValue() {
     alert(
       "Bravo ! Vous avez découvert le mot secret qui est " + motSecret + "  !"
     );
+    document.images["pendu"].src = "assets/img/gagner.png"; // On change l'image du pendu
     motRechercher.innerHTML = motSecret.substring(0, tailleMot);
-    lettresReveler.classList.add('d-none');
-    lettresReveler.classList.remove('d-flex');
+    lettresReveler.classList.add("d-none");
+    lettresReveler.classList.remove("d-flex");
     fini = true;
   }
 }
