@@ -211,9 +211,6 @@ p {
     border: 0.1rem solid rgba(0, 0, 0, 0.35);
     border-radius: 50rem;
     background: $persoDark;
-    &:hover {
-        @include hover;
-    }
 
     .logo {
         width: 15%;
