@@ -1,6 +1,7 @@
-var motSecret;
+var motSecret = "";
 var now = new Date(); // Date d'aujourd'hui
 var tableauMot = new Array(); // Le tableau qui contient les lettres du mot à trouver
+
 var mots = new Array(); // Le tableau qui contient tous les mots possibles
 var tailleMot; // Le nombre de lettres du mot à trouver
 var coupsManques = 0; // Le nombre de lettres fausses essayées
@@ -59,11 +60,13 @@ function proposer(element) {
   // On parcours chaque lettre du mot, on cherche si on trouve la lettre sélectionnée au clavier
   for (var i = 0; i < tailleMot; i++) {
     // Si c'est le cas :
-
+    var tdCacher = document.querySelector('.tdCacher');
     tableauMot[i] = document.getElementById(i);
-    if (tableauMot[i].innerHTML == lettre) {
+    if (tableauMot[i].innerHTML == lettre ) {
       // On affiche la lettre
       tableauMot[i].classList.add("lettre"); // On affiche la lettre
+      tdCacher.classList.add("tdLettre"); // On affiche la lettre
+      tdCacher.classList.remove("tdCacher"); // On affiche la lettre
       trouve = true;
       lettresTrouvees++;
     }
@@ -111,7 +114,6 @@ function getValue() {
   var input = document.querySelector("#motProposer").value;
   var gold = document.querySelector("body");
   var motRechercher = document.querySelector("#motReveler");
-  var lettresReveler = document.querySelector("#lettreReveler");
   var cacherP = document.querySelector(".siGagner");
   var cacherDiv = document.querySelector(".cacher");
   var visibleBtn = document.querySelector("#divReplay");
@@ -143,8 +145,6 @@ function getValue() {
     gold.classList.add("gold");
     visibleBtn.classList.add("d-flex");
     visibleBtn.classList.remove("d-none");
-    lettresReveler.classList.add("d-none");
-    lettresReveler.classList.remove("d-flex");
     fini = true;
   }
 }
