@@ -317,6 +317,7 @@ button.keyboard-button {
         width: 100%;
     }
     .pendu {
+        width: 80%;
         height: 50%;
         .imgTv {
             top: 1.2rem;
@@ -367,6 +368,11 @@ button.keyboard-button {
         justify-content: center;
     }
 }
+@media all and (min-width: 600px) and (max-width:699px) {
+    #page{
+        height: 73vh;
+    }
+}
 @media all and (min-width: 200px) and (max-width: 599px) {
     #page {
         font-size: 1rem;
@@ -391,6 +397,9 @@ button.keyboard-button {
     .coups #coupsRestant {
     width: 3rem;
     height: 3rem;
+    }
+    .pendu{
+        width: 100%;
     }
     .pendu_title h1{
         font-size: 3rem;
