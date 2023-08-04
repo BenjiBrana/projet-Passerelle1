@@ -344,7 +344,20 @@ button.keyboard-button {
         font-size: 3rem;
     }
 }
+@media all and (min-width: 600px) and (max-width:699px) {
+    #page{
+        height: 73vh;
+    }
+}
 @media all and (max-width: 499px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;        
+        section.container-fluid{
+            flex: 2;
+        }
+    }
     .mot {
         height: 25rem;
     }
@@ -355,22 +368,21 @@ button.keyboard-button {
         flex-wrap: wrap;
         align-content: center;
         justify-content: space-evenly;
+        flex: 1;
     }
     .virtual-keyboard {
         gap: 0.5rem;
-        padding: 1.4rem;
+        padding: 1rem;
         width: 100%;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
     }
     button.keyboard-button {
         margin: 0.2rem;
         display: flex;
         font-size: 1.8rem;
         justify-content: center;
-    }
-}
-@media all and (min-width: 600px) and (max-width:699px) {
-    #page{
-        height: 73vh;
     }
 }
 @media all and (min-width: 200px) and (max-width: 599px) {
@@ -384,6 +396,11 @@ button.keyboard-button {
     }
     .siGagner,.rechercher,.titreCoups,#motProposer,.coups #coupsRestant  {
         font-size: 1.5rem;
+    }
+    .titreCoups{
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
     }
     .lettre {
         height: 1rem;
