@@ -26,9 +26,9 @@
 				<br />
 			</div>
 			<form class="mot py-0 my-0">
-				<div class="d-flex flex-column mx-auto motRechercher pt-5">
-					<p class="siGagner">Entrer le mot que vous voulez essayer:</p>
-					<div class="d-flex flex-row w-100 my-5 justify-content-center gap-5 cacher">
+				<div class="d-flex flex-column mx-auto motRechercher pt-3">
+					<p class="siGagner py-3">Entrer le mot que vous voulez essayer</p>
+					<div class="d-flex flex-row w-100 my-4 justify-content-center gap-5 cacher">
 						<input class="text-center w-50 my-3" type="text" id="motProposer"
 							placeholder="...Mot à tester..." />
 						<br />
@@ -38,8 +38,8 @@
 					</div>
 					<div class="d-flex">
 						<div class="rechercher d-flex flex-column justify-content-between py-2">
-							<p>Mot recherché:</p>
-							<div class="d-flex justify-content-center pt-3 h-50" id="mot">
+							<p>Mot recherché</p>
+							<div class="d-flex justify-content-center pt-3 h-auto" id="mot">
 								<div id="lettreReveler" class="d-flex h-100">
 									<script>
 										for (var i = 0; i < tailleMot; i++) document.write(" <p id=\"" + i + "\">" + motSecret.charAt(i) + "</p>");
@@ -49,7 +49,7 @@
 							</div>
 						</div>
 						<div class="d-flex flex-column justify-content-center coups py-2">
-							<h3 class="titreCoups d-flex flex-column"> <span>Coups</span> <span>restant:</span></h3>
+							<h3 class="titreCoups d-flex flex-column"> <span>Coups</span> <span>restant</span></h3>
 							<p class="mx-auto text-center" id="coupsRestant">9</p>
 						</div>
 					</div>
