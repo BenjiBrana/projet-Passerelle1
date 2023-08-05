@@ -40,16 +40,11 @@
 						<div class="rechercher d-flex flex-column justify-content-between py-2">
 							<p>Mot recherché</p>
 							<div class="d-flex justify-content-center pt-3 h-auto" id="mot">
-								<table id="mot" class="d-flex h-100">
-									<tbody>
-										<tr id="trLettre" class="d-flex flex-row gap-2">
-											<script language="javascript">
-												for (var i = 0; i < tailleMot; i++) document.write("<td class='tdCacher'> <p id=\"" + i + "\">" + motSecret.charAt(i) + "</p></td>");
-											</script>
-										</tr>
-									</tbody>
-								</table>
-								
+								<div id="lettreReveler" class="d-flex h-100">
+									<script>
+										for (var i = 0; i < tailleMot; i++) document.write(" <p id=\"" + i + "\">" + motSecret.charAt(i) + "</p>");
+									</script>
+								</div>
 								<p id="motReveler"></p>
 							</div>
 						</div>

@@ -60,13 +60,11 @@ function proposer(element) {
   // On parcours chaque lettre du mot, on cherche si on trouve la lettre sélectionnée au clavier
   for (var i = 0; i < tailleMot; i++) {
     // Si c'est le cas :
-    var tdCacher = document.querySelector('.tdCacher');
+
     tableauMot[i] = document.getElementById(i);
-    if (tableauMot[i].innerHTML == lettre ) {
+    if (tableauMot[i].innerHTML == lettre) {
       // On affiche la lettre
       tableauMot[i].classList.add("lettre"); // On affiche la lettre
-      tdCacher.classList.add("tdLettre"); // On affiche la lettre
-      tdCacher.classList.remove("tdCacher"); // On affiche la lettre
       trouve = true;
       lettresTrouvees++;
     }
@@ -89,6 +87,7 @@ function proposer(element) {
       message.innerHTML ='<img class="d-block mx-auto" src="assets/img/perdu.png" alt="Perdu"><p class="alertMessage"><b>Vous avez perdu !</b></p><form method="post" href="javascript:location.reload();"><button type="submit" class="btnReplay btn-primary d-block mx-auto"><img class="logo" src="assets/img/replay.png"></button></form>';
       for (var i = 0; i < tailleMot; i++)
         tableauMot[i].style.visibility = "visible";
+       
       fini = true;
       // on affiche le mot, on fini le jeu
     }
@@ -114,6 +113,7 @@ function getValue() {
   var input = document.querySelector("#motProposer").value;
   var gold = document.querySelector("body");
   var motRechercher = document.querySelector("#motReveler");
+  var lettreReveler = document.querySelector("#lettreReveler");
   var cacherP = document.querySelector(".siGagner");
   var cacherDiv = document.querySelector(".cacher");
   var visibleBtn = document.querySelector("#divReplay");
@@ -140,6 +140,8 @@ function getValue() {
     document.images["pendu"].src = "assets/img/gagner.png"; // On change l'image du pendu
     motRechercher.innerHTML = motSecret.substring(0, tailleMot);
     cacherP.classList.add("d-none");
+    lettreReveler.classList.add("d-none");
+    lettreReveler.classList.remove("d-flex");
     cacherDiv.classList.add("d-none");
     cacherDiv.classList.remove("d-flex");
     gold.classList.add("gold");
