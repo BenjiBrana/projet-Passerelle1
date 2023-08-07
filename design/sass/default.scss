@@ -386,8 +386,9 @@ button.keyboard-button {
         flex-direction: column;
         flex-wrap: wrap;
         align-content: center;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         flex: 1;
+        margin-top: 4rem;
     }
     .virtual-keyboard {
         gap: 0.5rem;
@@ -396,6 +397,7 @@ button.keyboard-button {
         justify-content: flex-start;
         align-content: center;
         align-items: center;
+        
     }
     button.keyboard-button {
         margin: 0.2rem;
