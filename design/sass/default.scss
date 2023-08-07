@@ -135,13 +135,16 @@ p {
 #lettreReveler{
     p{
         width: 2.5rem;
-        display: flex;
-        justify-content: center;
+    font-size: 2rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
     background: #f9f7f7;
     margin-right: 0.5rem;
     padding: 0.25rem;
     color: #f9f7f7;
     text-shadow: none;
+    align-items: center;
     }
 }
 
@@ -150,6 +153,9 @@ p {
     font-size: 3rem;
     color: #dba620 !important;
     text-shadow: #000 1px 1px 1px !important;
+}
+#clavier{
+    margin-top: 1rem;
 }
 #message {
     height: 100vh;
@@ -291,6 +297,7 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.8rem;
+    margin-top: 4rem;
     padding: 1.6rem;
     width: 90%;
 }
@@ -380,16 +387,7 @@ button.keyboard-button {
     .mot {
         height: 25rem;
     }
-    footer.container-fluid {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: flex-start;
-        flex: 1;
-        margin-top: 4rem;
-    }
+    
     .virtual-keyboard {
         gap: 0.5rem;
         padding: 1rem;
@@ -409,7 +407,7 @@ button.keyboard-button {
 @media all and (min-width: 200px) and (max-width: 599px) {
     #page {
         font-size: 1rem;
-        height: 65vh;
+        height: 70vh;
         width: 100%;
     }
     .btnReplay {
