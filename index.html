@@ -24,15 +24,18 @@
 			</div>
 			<form class="mot py-0 my-0">
 				<div class="d-flex flex-column mx-auto motRechercher pt-3">
-					<p class="siGagner py-3">Entrer le mot que vous voulez essayer</p>
-					<div class="d-flex flex-row w-100 my-4 justify-content-center gap-5 cacher">
-						<input class="text-center w-50 my-3" type="text" id="motProposer"
-							placeholder="...Mot à tester..." />
-						<br />
-						<button class="valider" type="button" onclick="getValue();">
-							Valider
-						</button>
+					<p class="siGagner py-2">Entrer le mot que vous voulez essayer</p>
+					<input class="text-center mx-auto w-50 my-3" type="text" id="motProposer"placeholder="...Mot à tester..." />
+					<div class="cacher w-100 my-2 mx-auto gap-5 ">
+						<div class="coups py-2">
+							<h3 class="titreCoups d-flex gap-2"> <span>Coups</span> <span>restant</span></h3>
+							<p class="mx-5 text-center" id="coupsRestant">9</p>
+							<button class="valider" type="button" onclick="getValue();">
+								Valider
+							</button>
+						</div>
 					</div>
+					
 					<div class="d-flex">
 						<div class="rechercher d-flex flex-column justify-content-between py-2">
 							<p>Mot recherché</p>
@@ -44,10 +47,6 @@
 								</div>
 								<p id="motReveler"></p>
 							</div>
-						</div>
-						<div class="coups py-2">
-							<h3 class="titreCoups d-flex gap-2"> <span>Coups</span> <span>restant</span></h3>
-							<p class="mx-auto text-center" id="coupsRestant">9</p>
 						</div>
 					</div>
 					<div id="divReplay" class="d-none flex-column justify-content-center py-2">
