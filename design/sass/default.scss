@@ -60,9 +60,9 @@ body {
     @include flex();
     align-content: space-between;
 }
-#page {
+section {
     width: 55%;
-    height: 75vh;
+    height: 100vh;
     margin: 0 auto;
 }
 
@@ -333,7 +333,7 @@ button.keyboard-button {
     .virtual-keyboard {
         display: none;
     }
-    #page {
+    section {
         width: 100%;
         height: 75vh;
     }
@@ -371,7 +371,7 @@ button.keyboard-button {
     
 }
 @media all and (min-width: 600px) and (max-width: 699px) {
-    #page {
+    section {
         height: 73vh;
     }
 }
@@ -380,9 +380,7 @@ button.keyboard-button {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        section.container-fluid {
-            flex: 2;
-        }
+        
     }
     .mot {
         height: 25rem;
@@ -405,7 +403,7 @@ button.keyboard-button {
     }
 }
 @media all and (min-width: 200px) and (max-width: 599px) {
-    #page {
+    section {
         font-size: 1rem;
         height: 70vh;
         width: 100%;
