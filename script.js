@@ -1,13 +1,13 @@
-var motSecret = "";
-var now = new Date(); // Date d'aujourd'hui
-var tableauMot = new Array(); // Le tableau qui contient les lettres du mot à trouver
+let motSecret = "";
+let now = new Date(); // Date d'aujourd'hui
+let tableauMot = new Array(); // Le tableau qui contient les lettres du mot à trouver
 
-var mots = new Array(); // Le tableau qui contient tous les mots possibles
-var tailleMot; // Le nombre de lettres du mot à trouver
-var coupsManques = 0; // Le nombre de lettres fausses essayées
-var coupsTotals = 9; // Le nombre de coups possible
-var lettresTrouvees = 0; // Le nombre de lettres trouvées
-var fini = false; // true si le jeu est terminé
+let mots = new Array(); // Le tableau qui contient tous les mots possibles
+let tailleMot; // Le nombre de lettres du mot à trouver
+let coupsManques = 0; // Le nombre de lettres fausses essayées
+let coupsTotals = 9; // Le nombre de coups possible
+let lettresTrouvees = 0; // Le nombre de lettres trouvées
+let fini = false; // true si le jeu est terminé
 
 mots[0] = "MANGA";
 mots[1] = "DEVELOPPEUR";
@@ -51,14 +51,14 @@ function proposer(element) {
   if (element.style.backgroundColor == "black" || fini) return;
 
   // On récupère la lettre du clavier et on met la touche en black (pour signaler qu'elle est cliquée)
-  var lettre = element.innerHTML;
+  let lettre = element.innerHTML;
   changeCouleur(element, "black");
   changeBackground(element, "black");
 
-  // On met la variable trouve à false;
-  var trouve = false;
+  // On met la letiable trouve à false;
+  let trouve = false;
   // On parcours chaque lettre du mot, on cherche si on trouve la lettre sélectionnée au clavier
-  for (var i = 0; i < tailleMot; i++) {
+  for (let i = 0; i < tailleMot; i++) {
     // Si c'est le cas :
 
     tableauMot[i] = document.getElementById(i);
@@ -72,7 +72,7 @@ function proposer(element) {
 
   // Si la lettre n'est pas présente, trouvé vaut toujours false :
   if (!trouve) {
-    var coupsRestant = document.getElementById("coupsRestant");
+    let coupsRestant = document.getElementById("coupsRestant");
     coupsManques++;
     coupsTotals--;
     coupsRestant.innerHTML = coupsTotals;
@@ -81,11 +81,11 @@ function proposer(element) {
 
     // Si on a raté 9 fois :
     if (coupsManques == 9) {
-      var message = document.getElementById("message");
+      let message = document.getElementById("message");
       message.classList.remove("hidden");
       message.classList.add("visible");
       message.innerHTML ='<img class="d-block mx-auto" src="assets/img/perdu.png" alt="Perdu"><p class="alertMessage"><b>Vous avez perdu !</b></p><form method="post" href="javascript:location.reload();"><button type="submit" class="btnReplay btn-primary d-block mx-auto"><img class="logo" src="assets/img/replay.png"></button></form>';
-      for (var i = 0; i < tailleMot; i++)
+      for (let i = 0; i < tailleMot; i++)
         tableauMot[i].style.visibility = "visible";
        
       fini = true;
@@ -94,10 +94,10 @@ function proposer(element) {
   }
   if (lettresTrouvees == tailleMot) {
     document.images["pendu"].src = "assets/img/gagner.png"; // On change l'image du pendu
-    var cacherP = document.querySelector(".siGagner");
-    var cacherDiv = document.querySelector(".cacher");
-    var visibleBtn = document.querySelector("#divReplay");
-    var gold = document.querySelector("body");
+    let cacherP = document.querySelector(".siGagner");
+    let cacherDiv = document.querySelector(".cacher");
+    let visibleBtn = document.querySelector("#divReplay");
+    let gold = document.querySelector("body");
     cacherP.classList.add("d-none");
     gold.classList.add("gold");
     cacherDiv.classList.add("d-none");
@@ -110,14 +110,14 @@ function proposer(element) {
 
 function getValue() {
   // Sélectionner l'élément input et récupérer sa valeur
-  var input = document.querySelector("#motProposer").value;
-  var gold = document.querySelector("body");
-  var motRechercher = document.querySelector("#motReveler");
-  var lettreReveler = document.querySelector("#lettreReveler");
-  var cacherP = document.querySelector(".siGagner");
-  var cacherDiv = document.querySelector(".cacher");
-  var visibleBtn = document.querySelector("#divReplay");
-  var inputMaj = input.toUpperCase();
+  let input = document.querySelector("#motProposer").value;
+  let gold = document.querySelector("body");
+  let motRechercher = document.querySelector("#motReveler");
+  let lettreReveler = document.querySelector("#lettreReveler");
+  let cacherP = document.querySelector(".siGagner");
+  let cacherDiv = document.querySelector(".cacher");
+  let visibleBtn = document.querySelector("#divReplay");
+  let inputMaj = input.toUpperCase();
   if (inputMaj != motSecret) {
     coupsManques++;
     coupsTotals--;
@@ -125,11 +125,11 @@ function getValue() {
     document.images["pendu"].src = "assets/img/pendu_" + coupsManques + ".png"; // On change l'image du pendu
   }
   if (coupsManques == 9) {
-    var message = document.getElementById("message");
+    let message = document.getElementById("message");
     message.classList.remove("hidden");
     message.classList.add("visible");
     message.innerHTML ='<img class="d-block mx-auto" src="assets/img/perdu.png" alt="Perdu"><p class="alertMessage"><b>Vous avez perdu !</b></p><form method="post" href="javascript:location.reload();"><button type="submit" class="btnReplay btn-primary d-block mx-auto"><img class="logo" src="assets/img/replay.png"></button></form>';
-    for (var i = 0; i < tailleMot; i++)
+    for (let i = 0; i < tailleMot; i++)
       tableauMot[i].style.visibility = "visible";
     fini = true;
    
