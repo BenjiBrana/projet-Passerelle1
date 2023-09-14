@@ -14,7 +14,7 @@
 <script src="script.js"></script>
 
 <body class="bg-gray">
-	<section class="container pt-3">
+	<section class="container d-flex flex-column gap-2 pt-3">
 		<div id="message" class="hidden bg-black"></div>
 		<div class="pendu my-1">
 			<img class="imgTv" name="pendu" src="assets/img/pendu_0.png" alt="Pendu" />
@@ -25,7 +25,7 @@
 				<p class="siGagner py-2">Entrer le mot que vous voulez essayer</p>
 				<input class="text-center mx-auto w-50 my-3" type="text" id="motProposer"
 					placeholder="...Mot à tester..." />
-				<div class="cacher w-100 my-2 mx-auto gap-5 ">
+				<div class="divCoups w-100 my-2 mx-auto gap-5 ">
 					<div class="coups py-2">
 						<h3 class="titreCoups d-flex gap-2"> <span>Coups</span> <span>restant</span></h3>
 						<p class="mx-5 text-center" id="coupsRestant">9</p>
@@ -34,8 +34,7 @@
 						</button>
 					</div>
 				</div>
-
-				<div class="d-flex">
+				<div class="d-flex mb-5">
 					<div class="rechercher d-flex flex-column justify-content-between py-2">
 						<p>Mot recherché</p>
 						<div class="d-flex justify-content-center pt-3 h-auto" id="mot">
@@ -57,6 +56,7 @@
 				</div>
 			</div>
 		</form>
+	</section>
 		<div class="w-100 row virtual-keyboard mx-auto mt-2" id="clavier">
 			<button class="keyboard-button btn btn-light col-1 " onclick="proposer(this);">A</button>
 			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">B</button>
@@ -85,9 +85,6 @@
 			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">Y</button>
 			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">Z</button>
 		</div>
-	</section>
-
-
 </body>
 
 </html>

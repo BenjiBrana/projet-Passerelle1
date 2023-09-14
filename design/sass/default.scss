@@ -65,7 +65,21 @@ section {
     height: 100vh;
     margin: 0 auto;
 }
-
+button.keyboard-button {
+    margin: 0.4rem;
+    background: $persoGrayT;
+    color: $persoGold;
+    text-shadow:
+        rgb(0, 0, 0) 1px 1px 1px,
+        rgb(255, 255, 255) 1px 1px 1px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 0.2rem solid rgba(0, 0, 0, 0.35);
+    &:hover {
+        @include hover;
+        box-shadow: rgb(219, 166, 32) 0px 0px 10px;
+    }
+}
 .bg-gray {
     background-color: $persoGrayT;
 }
@@ -94,7 +108,7 @@ section {
         top: 1.8rem;
         width: 78%;
         height: 92%;
-        border: .5rem inset rgba(255,255,255,.5);
+        border: 0.5rem inset rgba(255, 255, 255, 0.5);
         border-radius: 1rem;
     }
 }
@@ -105,18 +119,18 @@ section {
 }
 #mot {
     font-size: 3rem;
-  td{
-    background: $persoWhite;
-    color: $persoWhite;
-    text-shadow: none;
-    overflow: hidden;
-    flex: 1;
-}
+    td {
+        background: $persoWhite;
+        color: $persoWhite;
+        text-shadow: none;
+        overflow: hidden;
+        flex: 1;
+    }
 }
 p {
     margin-bottom: 0 !important;
 }
-.cacher{
+.divCoups {
     @include flexRow();
 }
 .motRechercher {
@@ -124,67 +138,12 @@ p {
     font-family: "Righteous", cursive;
     font-weight: bold;
 }
-#motReveler {
-    color: $persoGold;
-    visibility: visible;
-    height: 3rem;
-    font-size: 3rem;
-}
-#motProposer{
-    height: 3rem;
-}
-#lettreReveler{
-    p{
-        width: 2.5rem;
-    font-size: 2rem;
-    height: 3rem;
-    display: flex;
-    justify-content: center;
-    background: #f9f7f7;
-    margin-right: 0.5rem;
-    padding: 0.25rem;
-    color: #f9f7f7;
-    text-shadow: none;
-    align-items: center;
-    }
-}
-
 .lettre {
     visibility: visible;
     font-size: 3rem;
     color: #dba620 !important;
     text-shadow: #000 1px 1px 1px !important;
 }
-#clavier{
-    margin-top: 1rem;
-}
-#message {
-    height: 100vh;
-    width: 100vw;
-    z-index: 8;
-    position: absolute;
-    top: 0;
-    right: 0;
-    animation-name: essuieglace, taille;
-    animation-duration: 3s, 3s;
-}
-@keyframes taille {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 100%;
-    }
-}
-@keyframes essuieglace {
-    from {
-        margin-right: 50%;
-    }
-    to {
-        margin-right: 0%;
-    }
-}
-
 .alertMessage {
     @include flexCenter();
     font-size: 5rem;
@@ -292,7 +251,6 @@ p {
         }
     }
 }
-
 .virtual-keyboard {
     display: flex;
     flex-wrap: wrap;
@@ -302,19 +260,57 @@ p {
     padding: 1.6rem;
     width: 90%;
 }
-button.keyboard-button {
-    margin: 0.4rem;
-    background: $persoGrayT;
+#motReveler {
     color: $persoGold;
-    text-shadow:
-        rgb(0, 0, 0) 1px 1px 1px,
-        rgb(255, 255, 255) 1px 1px 1px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border: 0.2rem solid rgba(0, 0, 0, 0.35);
-    &:hover {
-        @include hover;
-        box-shadow: rgb(219, 166, 32) 0px 0px 10px;
+    visibility: visible;
+    height: 3rem;
+    font-size: 3rem;
+}
+#motProposer {
+    height: 3rem;
+}
+#lettreReveler {
+    p {
+        width: 2.5rem;
+        font-size: 2rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        background: #f9f7f7;
+        margin-right: 0.5rem;
+        padding: 0.25rem;
+        color: #f9f7f7;
+        text-shadow: none;
+        align-items: center;
+    }
+}
+#clavier {
+    margin-top: 1rem;
+}
+#message {
+    height: 100vh;
+    width: 100vw;
+    z-index: 8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation-name: essuieglace, taille;
+    animation-duration: 3s, 3s;
+}
+@keyframes taille {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes essuieglace {
+    from {
+        margin-right: 50%;
+    }
+    to {
+        margin-right: 0%;
     }
 }
 
@@ -369,7 +365,6 @@ button.keyboard-button {
     .alertMessage {
         font-size: 3rem;
     }
-    
 }
 @media all and (min-width: 600px) and (max-width: 699px) {
     section {
@@ -381,12 +376,11 @@ button.keyboard-button {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        
     }
     .mot {
         height: 25rem;
     }
-    
+
     .virtual-keyboard {
         gap: 0.5rem;
         padding: 1rem;
@@ -394,7 +388,6 @@ button.keyboard-button {
         justify-content: flex-start;
         align-content: center;
         align-items: center;
-        
     }
     button.keyboard-button {
         margin: 0.2rem;
@@ -424,7 +417,7 @@ button.keyboard-button {
         gap: 0.5rem;
         justify-content: center;
     }
-   
+
     .valider {
         font-size: 1.2rem;
         padding: 0.6rem;
@@ -442,5 +435,4 @@ button.keyboard-button {
     .btn .logo {
         width: 20%;
     }
-
 }
