@@ -92,9 +92,10 @@ section {
         margin-left: 1rem;
         left: 0;
         top: 1.8rem;
-        width: 77%;
-        height: 90%;
-        border: 0.2rem inset rgba(255, 255, 255, 0.5);
+        width: 78%;
+        height: 92%;
+        border: .5rem inset rgba(255,255,255,.5);
+        border-radius: 1rem;
     }
 }
 .mot {
@@ -236,7 +237,7 @@ p {
     background: $persoDark;
 
     .logo {
-        width: 15%;
+        width: 10%;
         border-radius: 50rem;
         display: block;
         box-shadow: rgb(219, 166, 32) 0px 0px 10px;
@@ -439,7 +440,7 @@ button.keyboard-button {
         width: 100%;
     }
     .btn .logo {
-        width: 25%;
+        width: 20%;
     }
 
 }
