@@ -1,90 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Projet Passerelle 1 - Le Pendu</title>
+    <link rel="stylesheet" href="design/css/default.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script src="script.js"></script>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Projet Passerelle 1 - Le Pendu</title>
-	<link rel="stylesheet" href="design/css/default.css" />
-	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet" />
-</head>
-<script src="script.js"></script>
-
-<body class="bg-gray">
-	<section class="container d-flex flex-column gap-2 pt-3">
-		<div id="message" class="hidden bg-black"></div>
-		<div class="pendu my-1">
-			<img class="imgTv" name="pendu" src="assets/img/pendu_0.png" alt="Pendu" />
-			<br />
-		</div>
-		<form class="mot py-0 my-0">
-			<div class="d-flex flex-column mx-auto motRechercher pt-3">
-				<p class="siGagner py-2">Entrer le mot que vous voulez essayer</p>
-				<input class="text-center mx-auto w-50 my-3" type="text" id="motProposer"
-					placeholder="...Mot à tester..." />
-				<div class="divCoups w-100 my-2 mx-auto gap-5 ">
-					<div class="coups py-2">
-						<h3 class="titreCoups d-flex gap-2"> <span>Coups</span> <span>restant</span></h3>
-						<p class="mx-5 text-center" id="coupsRestant">9</p>
-						<button class="valider" type="button" onclick="getValue();">
-							Valider
-						</button>
-					</div>
-				</div>
-				<div class="d-flex mb-5">
-					<div class="rechercher d-flex flex-column justify-content-between py-2">
-						<p>Mot recherché</p>
-						<div class="d-flex justify-content-center pt-3 h-auto" id="mot">
-							<div id="lettreReveler" class="d-flex h-100">
-								<script>
-									for (var i = 0; i < tailleMot; i++) document.write(" <p id=\"" + i + "\">" + motSecret.charAt(i) + "</p>");
-								</script>
-							</div>
-							<p id="motReveler"></p>
-						</div>
-					</div>
-				</div>
-				<div id="divReplay" class="d-none flex-column justify-content-center py-2">
-					<form method="post" href="javascript:location.reload();">
-						<button type="submit" class="btn d-block mx-auto">
-							<img class="logo mx-auto" src="assets/img/replay.png">
-						</button>
-					</form>
-				</div>
-			</div>
-		</form>
-	</section>
-		<div class="w-100 row virtual-keyboard mx-auto mt-2" id="clavier">
-			<button class="keyboard-button btn btn-light col-1 " onclick="proposer(this);">A</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">B</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">C</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">D</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">E</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">F</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">G</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">H</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">I</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">J</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">K</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">L</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">M</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">N</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">O</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">P</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">Q</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">R</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">S</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">T</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">U</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">V</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">W</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">X</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">Y</button>
-			<button class="keyboard-button btn btn-light col-1" onclick="proposer(this);">Z</button>
-		</div>
-</body>
-
+  <body class="bg-gray">
+    <section class="container h-100 d-flex flex-column gap-2 pt-3">
+      <div id="message"></div>
+      <div class="pendu my-1">
+        <img
+          class="imgTv"
+          name="pendu"
+          src="assets/img/pendu_0.png"
+          alt="Pendu"
+        />
+        <br />
+      </div>
+      <form class="mot py-0 my-0">
+        <div class="d-flex flex-column mx-auto motRechercher pt-3">
+          <p class="siGagner py-2">
+            Entrer le mot que vous voulez essayer
+          </p>
+          <input class="text-center mx-auto w-50 my-3" type="text" id="motProposer" placeholder="...Mot à tester..."/>
+          <div class="divCoups w-100 my-2 mx-auto gap-5">
+            <div class="coups py-2">
+              <h3 class="titreCoups d-flex gap-2">
+                <span>Coups</span> <span>restant</span>
+              </h3>
+              <p class="mx-5 text-center" id="coupsRestant">9</p>
+              <button class="valider"type="button"onclick="getValue();">Valider</button>
+            </div>
+          </div>
+          <div class="d-flex mb-2">
+            <div class="rechercher d-flex flex-column justify-content-center py-2">
+              <p>Mot recherché</p>
+              <div class="d-flex justify-content-center pt-3 h-auto"id="mot">
+                <div id="lettreReveler" class="d-flex h-100">
+                  <!-- Faire apparaître les lettres -->
+                  <script>
+                    lettreAfficher();
+                  </script>
+                </div>
+                <p id="motReveler"></p>
+              </div>
+            </div>
+          </div>
+          <div id="btnReplay"class="d-flex flex-column justify-content-center py-2"></div>
+        </div>
+      </form>
+      <div class="w-100 row virtual-keyboard mx-auto mt-2" id="clavier">
+        <!-- Création du clavier -->
+        <script>
+          afficherClavier();
+        </script>
+      </div>
+    </section>
+    
+  </body>
 </html>
