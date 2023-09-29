@@ -1,6 +1,7 @@
 // Colors
 $persoGrayT: #232323b9;
 $persoGray: #232323;
+$persoGrayLight: #9e918f;
 $persoWhite: #f9f7f7;
 $persoDark: #112d4e;
 $persoGold: rgb(219, 166, 32);
@@ -35,7 +36,6 @@ $persoRed: rgb(206, 0, 0);
     background: $persoWhite;
     border: 0.1rem solid rgba(0, 0, 0, 0.35);
 }
-
 
 // Fonts
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
@@ -97,12 +97,11 @@ button.keyboard-button {
 }
 
 .bg-gray {
-    background-color: $persoGrayT;
+    background-color: $persoGrayLight;
 }
 
 .pendu,
 .mot {
-    width: 100%;
     margin: 1rem auto;
     border-radius: 0.5rem;
     text-align: center;
@@ -111,9 +110,8 @@ button.keyboard-button {
 }
 
 .pendu {
-    flex: 3;
-    height: 60%;
-    width: 80%;
+    height: 70%;
+    width: 70%;
     background: #000 url(../../assets/img/tv.png) no-repeat;
     background-size: 100% 100%;
     border: 0.2rem inset rgba(0, 0, 0, 0.5);
@@ -122,23 +120,23 @@ button.keyboard-button {
 
     .imgTv {
         position: absolute;
-        margin-left: 1rem;
+        margin-left: 0.5rem;
         left: 0;
-        top: 1.8rem;
-        width: 78%;
-        height: 92%;
+        top: 0.2rem;
+        width: 79%;
+        height: 99%;
         border: 0.5rem inset rgba(255, 255, 255, 0.5);
         border-radius: 1rem;
     }
 }
 
 .mot {
+    width: 100%;
     flex: 3;
     display: flex;
     font-size: 2rem;
     height: 23rem;
     align-items: center;
-    
 }
 
 #mot {
@@ -271,7 +269,9 @@ p {
 
 .virtual-keyboard {
     flex-wrap: wrap;
+    justify-content: center;
     align-content: flex-start;
+    align-items: center;
     flex: 1;
     gap: 0.8rem;
     padding: 1.6rem;
@@ -375,24 +375,22 @@ p {
 }
 
 @media all and (max-width: 999px) {
-      section {
+    section {
         width: 100%;
         height: 75vh;
     }
 
     .pendu,
     .mot {
-        width: 100%;
         flex: 2;
     }
-
+    .mot {
+        width: 100%;
+    }
     .pendu {
         width: 80%;
         height: 50%;
-
-        .imgTv {
-            top: 1.2rem;
-        }
+        border-radius: 0 0 1.5rem 1.5rem;
     }
 
     .bouton {
@@ -420,20 +418,33 @@ p {
         font-size: 3rem;
     }
 }
-
+@media all and (min-width: 700px) and (max-width: 999px) {
+    .pendu {
+        width: 60%;
+    }
+}
 @media all and (min-width: 600px) and (max-width: 699px) {
     section {
         height: 73vh;
     }
 }
 
-@media all and (max-width: 499px) {
+@media all and (min-width: 499px) and (max-width: 599px) {
+    .pendu {
+        flex: 2;
+    }
+}
+@media all and (min-width: 200px) and (max-width: 499px) {
     body {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
     }
-
+    section {
+        font-size: 1rem;
+        height: 70vh;
+        width: 100%;
+    }
     .mot {
         flex: 1;
         height: 25rem;
@@ -443,9 +454,6 @@ p {
         gap: 0.5rem;
         padding: 1rem;
         width: 100%;
-        justify-content: space-evenly;
-        align-content: center;
-        align-items: center;
     }
 
     button.keyboard-button {
@@ -453,14 +461,6 @@ p {
         display: flex;
         font-size: 1.8rem;
         justify-content: center;
-    }
-}
-
-@media all and (min-width: 200px) and (max-width: 599px) {
-    section {
-        font-size: 1rem;
-        height: 70 vh;
-        width: 100%;
     }
 
     .btnReplay {
