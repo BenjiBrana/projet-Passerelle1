@@ -39,7 +39,7 @@ function modifierStyle(element, propriete, valeur) {
 function gagner() {
   let visibleBtn = document.querySelector('#btnReplay');
   let gold = document.querySelector('body');
-  document.images['pendu'].src = 'assets/img/gagner.png';
+  document.images['pendu'].src = 'assets/img/gagner.webp';
   visibleBtn.innerHTML =
     '<button type="submit" id="replayButton" class="btn d-flex justify-content-center mx-auto"><img class="logo" src="assets/img/replay.webp"></button>';
   gold.classList.add('gold');
@@ -69,7 +69,7 @@ function coupRatee(){
   document.getElementById('coupsRestant').innerHTML = coupsTotals--;
   coupsManques++;
   document.images['pendu'].src =
-    'assets/img/pendu_' + coupsManques + '.png'; // On change l'image du pendu
+    'assets/img/pendu_' + coupsManques + '.webp'; // On change l'image du pendu
 }
 
 // Recharge la page au clique sur replay
