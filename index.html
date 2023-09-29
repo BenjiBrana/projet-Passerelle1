@@ -6,9 +6,18 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <meta name="google-site-verification" content="xoVm2Fr_XAAijmRmDxFbkgYRYFNtB0qJ_sdHWQNsznI" />
-    <title>GoldPendu | GoldPendu reprends les principes du célébre jeu du Pendu.</title>
-    <meta name="description" content="Trouverez-vous le mot caché ? Mais prenez garde à ne pas faire trop d'erreur sinon le personnage sera pendu.">
+    <meta
+      name="google-site-verification"
+      content="xoVm2Fr_XAAijmRmDxFbkgYRYFNtB0qJ_sdHWQNsznI"
+    />
+    <title>
+      GoldPendu | GoldPendu reprends les principes du célébre jeu du
+      Pendu.
+    </title>
+    <meta
+      name="description"
+      content="Trouverez-vous le mot caché ? Mais prenez garde à ne pas faire trop d'erreur sinon le personnage sera pendu."
+    />
     <link rel="stylesheet" href="design/css/default.css" />
     <link
       rel="stylesheet"
@@ -44,21 +53,40 @@
           <p class="siGagner py-2">
             Entrer le mot que vous voulez essayer
           </p>
-          <input class="text-center mx-auto w-50 my-3" type="text" id="motProposer" placeholder="...Mot à tester..."/>
+          <input
+            class="text-center mx-auto w-50 my-3"
+            type="text"
+            id="motProposer"
+            placeholder="...Mot à tester..."
+          />
           <div class="divCoups w-100 my-2 mx-auto gap-5">
             <div class="coups py-2">
               <h3 class="titreCoups d-flex gap-2">
                 <span>Coups</span> <span>restant</span>
               </h3>
               <p class="mx-5 text-center" id="coupsRestant">9</p>
-              <button class="valider"type="button"onclick="getValue();">Valider</button>
+              <button
+                class="valider"
+                type="button"
+                onclick="getValue();"
+              >
+                Valider
+              </button>
             </div>
           </div>
           <div class="d-flex mb-2">
-            <div class="rechercher d-flex flex-column justify-content-center py-2">
+            <div
+              class="rechercher d-flex flex-column justify-content-center py-2"
+            >
               <p>Mot recherché</p>
-              <div class="d-flex justify-content-center pt-3 h-auto"id="mot">
-                <div id="lettreReveler" class="d-flex justify-content-center align-items-stretch w-100 h-100">
+              <div
+                class="d-flex justify-content-center pt-3 h-auto"
+                id="mot"
+              >
+                <div
+                  id="lettreReveler"
+                  class="d-flex justify-content-center align-items-stretch w-100 h-100"
+                >
                   <!-- Faire apparaître les lettres -->
                   <script>
                     lettreAfficher();
@@ -68,7 +96,10 @@
               </div>
             </div>
           </div>
-          <div id="btnReplay"class="d-flex flex-column justify-content-center py-2"></div>
+          <div
+            id="btnReplay"
+            class="d-flex flex-column justify-content-center py-2"
+          ></div>
         </div>
       </form>
       <div class="w-100 d-flex virtual-keyboard mx-auto" id="clavier">
@@ -78,6 +109,5 @@
         </script>
       </div>
     </section>
-    
   </body>
 </html>

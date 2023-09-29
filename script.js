@@ -41,7 +41,7 @@ function gagner() {
   let gold = document.querySelector('body');
   document.images['pendu'].src = 'assets/img/gagner.png';
   visibleBtn.innerHTML =
-    '<button type="submit" id="replayButton" class="btn d-flex justify-content-center mx-auto"><img class="logo" src="assets/img/replay.png"></button>';
+    '<button type="submit" id="replayButton" class="btn d-flex justify-content-center mx-auto"><img class="logo" src="assets/img/replay.webp"></button>';
   gold.classList.add('gold');
   document.querySelector('.cacher').classList.add('d-none').remove('d-flex');
   document.querySelector('.siGagner').classList.add('d-none');
@@ -52,10 +52,10 @@ function perdu() {
   let message = document.getElementById('message');
   message.classList.add('message');
   message.innerHTML =
-    '<img class="d-block mx-auto" src="assets/img/perdu.png" alt="Perdu"><p class="alertMessage"><b>Vous avez perdu !</b></p>';
+    '<img class="d-block mx-auto" src="assets/img/perdu.webp" alt="Perdu"><p class="alertMessage"><b>Vous avez perdu !</b></p>';
   const replayButton = document.body.appendChild(document.createElement('button'));
   replayButton.innerHTML =
-    '<img class="logo" src="assets/img/replay.png">';
+    '<img class="logo" src="assets/img/replay.webp">';
   replayButton.className = 'btnReplay btn-primary d-block mx-auto';
   replayButton.id = 'replayButton';
   replayButton.type = 'submit';
