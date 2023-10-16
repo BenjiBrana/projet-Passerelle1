@@ -206,7 +206,7 @@ p {
     background: $persoDark;
 
     .logo {
-        width: 10%;
+        width: 20%;
         border-radius: 50rem;
         display: block;
         box-shadow: 0 0 10px $persoGold;
@@ -337,8 +337,7 @@ p {
     background: #000;
     top: 0;
     right: 0;
-    animation-name: essuieglace, taille;
-    animation-duration: 3s, 3s;
+    animation: taille 3s;
 
     @keyframes taille {
         from {
@@ -346,15 +345,6 @@ p {
         }
         to {
             width: 100%;
-        }
-    }
-
-    @keyframes essuieglace {
-        from {
-            margin-right: 50%;
-        }
-        to {
-            margin-right: 0%;
         }
     }
 }
