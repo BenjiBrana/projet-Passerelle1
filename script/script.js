@@ -32,10 +32,14 @@ let fini = false;
 motSecret = mots[new Date().getSeconds() % mots.length];
 let tailleMot = motSecret.length;
 
+//Modifier style lettre utilisées
+
 function modifierStyle(element, propriete, valeur) {
   element.style[propriete] = valeur;
 }
 
+
+//Si gagné applique ce style
 function gagner() {
   let visibleBtn = document.querySelector('#btnReplay');
   let gold = document.querySelector('body');
@@ -48,6 +52,8 @@ function gagner() {
   fini = true;
 }
 
+
+//Si perdu applique ce style
 function perdu() {
   let message = document.getElementById('message');
   message.classList.add('message');
@@ -65,20 +71,20 @@ function perdu() {
   fini = true;
 }
 
+// Chaque coup raté on change l'image du pendu
 function coupRatee(){
   document.getElementById('coupsRestant').innerHTML = coupsTotals--;
   coupsManques++;
   document.images['pendu'].src =
-    'assets/img/pendu_' + coupsManques + '.webp'; // On change l'image du pendu
+    'assets/img/pendu_' + coupsManques + '.webp'; 
 }
 
 // Recharge la page au clique sur replay
 document.getElementById('replayButton').addEventListener('click', location.reload);
 
-
+// Affiche les lettre trouvée
 function lettreAfficher(){
   const motReveler = document.querySelector('#lettreReveler');
-  
   for (let i = 0; i < tailleMot; i++) {
     const lettre = document.createElement('p');
     lettre.id = i.toString();
@@ -87,6 +93,8 @@ function lettreAfficher(){
   }
 }
 
+
+//Affiche le clavier dynamiquement
 function afficherClavier() {
   const clavier = document.getElementById('clavier');
   const lettres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -100,7 +108,7 @@ function afficherClavier() {
   }
 }
 
-
+//Lettre proposées
 function proposer(element) {
   if (element.style.backgroundColor == 'black' || fini) return;
   let lettre = element.innerHTML;
@@ -136,6 +144,7 @@ function proposer(element) {
   }
 }
 
+//Mot proposé
 function getValue() {
   let input = document.querySelector('#motProposer').value;
   let inputMaj = input.toUpperCase();
